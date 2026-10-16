@@ -1,5 +1,6 @@
 {
   "siteUrl": "http://localhost:4321",
+  "frameAncestors": ["http://localhost:5180"],
   "adminEmail": "lucas@lucasswebsite.be",
   "adminPassword": "CHOOSE-A-STRONG-PASSWORD",
   "giphyApiKey": "",

@@ -16,6 +16,10 @@ const config = {
   adminPassword: file.adminPassword || '',
   // GIPHY API key for GIF search in comments and posts (free at developers.giphy.com). Empty = search off, uploads still work.
   giphyApiKey: env.GIPHY_API_KEY || file.giphyApiKey || '',
+  // Extra origins allowed to embed the site in an iframe (e.g. "http://localhost:5180" for Pindows1).
+  // FRAME_ANCESTORS is a comma-separated list; the file value is an array. Empty = same origin only.
+  frameAncestors: (env.FRAME_ANCESTORS ? env.FRAME_ANCESTORS.split(',') : (Array.isArray(file.frameAncestors) ? file.frameAncestors : []))
+    .map(s => String(s).trim()).filter(s => /^https?:\/\/[^\s'";]+$/.test(s)),
   smtp: {
     host: env.SMTP_HOST || smtpFile.host || '',
     port: parseInt(env.SMTP_PORT || smtpFile.port || 465, 10),

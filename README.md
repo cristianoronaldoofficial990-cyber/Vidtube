@@ -25,6 +25,7 @@ Copy `config.example.json` to `config.json` and fill it in. Nothing in it is req
 | `smtp.host`, `smtp.port`, `smtp.secure` | Your mail server. Port 465 with `secure: true` (SMTPS) or port 587 with `secure: false` (STARTTLS). |
 | `smtp.user`, `smtp.pass` | Mailbox login. |
 | `smtp.from` | Sender shown to users, e.g. `VidTube <noreply@lucasswebsite.be>`. |
+| `frameAncestors` | Extra origins that may embed VidTube in an iframe, e.g. `["http://localhost:5180"]` for the Pindows1 desktop simulator. Empty = same origin only. Env: `FRAME_ANCESTORS` (comma-separated). |
 | `giphyApiKey` | GIPHY API key (free at developers.giphy.com) for GIF search in comments and posts. Without it the GIF search button says it is not set up; uploading your own pictures and GIFs always works. |
 
 Environment variables override the file: `PORT`, `GIPHY_API_KEY`, `DATA_DIR`, `SITE_URL`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `FFMPEG_PATH`, `COOKIE_SECURE=1` (behind HTTPS), `TRUST_PROXY=1` (behind a reverse proxy).

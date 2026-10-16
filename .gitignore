@@ -1,3 +1,6 @@
-data/
+data/tmp/
+data/tools/
+data/*.db-wal
+data/*.db-shm
 node_modules/
 config.json

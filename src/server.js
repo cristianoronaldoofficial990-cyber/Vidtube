@@ -21,12 +21,16 @@ const PORT = parseInt(process.env.PORT || '4321', 10);
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 const INDEX = path.join(PUBLIC_DIR, 'index.html');
 
+// Origins that may embed the site in an <iframe> (config.json "frameAncestors" / FRAME_ANCESTORS), e.g. the
+// Pindows1 desktop simulator. Empty = same origin only. X-Frame-Options cannot list several origins, so it is
+// only sent when no extra ancestors are configured; frame-ancestors in the CSP always applies.
+const FRAME_ANCESTORS = ["'self'", ...require('./config').frameAncestors];
 const SECURITY = {
   'X-Content-Type-Options': 'nosniff',
-  'X-Frame-Options': 'SAMEORIGIN',
+  ...(FRAME_ANCESTORS.length === 1 ? { 'X-Frame-Options': 'SAMEORIGIN' } : {}),
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-  'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob: https://*.giphy.com; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'",
+  'Content-Security-Policy': `default-src 'self'; img-src 'self' data: blob: https://*.giphy.com; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors ${FRAME_ANCESTORS.join(' ')}; base-uri 'self'; form-action 'self'`,
 };
 
 function sendJson(res, status, data, extra = {}) {
