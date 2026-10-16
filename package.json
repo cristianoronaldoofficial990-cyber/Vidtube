@@ -1,0 +1,13 @@
+{
+  "name": "vidtube",
+  "version": "1.0.0",
+  "description": "VidTube + GeoTube: a self-hosted video platform with a moderated mapping/Countryballs section.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": { "node": ">=22.5" },
+  "license": "UNLICENSED",
+  "private": true
+}

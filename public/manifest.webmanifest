@@ -1,0 +1,21 @@
+{
+  "name": "VidTube",
+  "short_name": "VidTube",
+  "description": "VidTube: upload, watch and share videos. GeoTube: the home of mapping and Countryballs.",
+  "id": "/",
+  "start_url": "/?src=app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f0f12",
+  "theme_color": "#e6b400",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Shorts", "url": "/shorts?src=app", "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Upload", "url": "/studio/upload?src=app", "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "GeoTube", "url": "/geotube?src=app", "icons": [{ "src": "/img/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

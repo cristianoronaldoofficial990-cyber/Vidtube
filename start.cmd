@@ -1,0 +1,7 @@
+@echo off
+cd /d "%~dp0"
+where node >nul 2>nul || (echo Node.js is not installed. Download it from https://nodejs.org & pause & exit /b 1)
+echo Starting VidTube on http://localhost:4321 ...
+start "" /b cmd /c "timeout /t 3 >nul & start http://localhost:4321"
+node src\server.js
+pause

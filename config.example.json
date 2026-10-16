@@ -1,0 +1,14 @@
+{
+  "siteUrl": "http://localhost:4321",
+  "adminEmail": "lucas@lucasswebsite.be",
+  "adminPassword": "CHOOSE-A-STRONG-PASSWORD",
+  "giphyApiKey": "",
+  "smtp": {
+    "host": "mail.lucasswebsite.be",
+    "port": 465,
+    "secure": true,
+    "user": "noreply@lucasswebsite.be",
+    "pass": "FILL-IN-YOUR-MAILBOX-PASSWORD",
+    "from": "VidTube <noreply@lucasswebsite.be>"
+  }
+}
